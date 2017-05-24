@@ -1,0 +1,37 @@
+- host: master
+  os: 'centos/7'           # This value you can get from "vagrant box" command
+  ip: '192.168.33.100'
+  memory: '1024'
+  cpu_num: '1'
+  script:
+    - cat /vagrant/key_value > /home/vagrant/.ssh/authorized_keys
+    - yum install -y nano
+
+- host: centos7-host
+  os: 'centos/7'
+  ip: '192.168.33.110'
+  memory: '512'
+  cpu_num: '1'
+  script:
+    - yum install -y nano
+
+- host: debian-host
+  os: 'ubuntu/trusty64'
+  ip: '192.168.33.120'
+  memory: '512'
+  cpu_num: '1'
+  script:
+
+
+#- host: centos6-host
+#  os: 'centos6'
+#  ip: '192.168.33.130'
+#  memory: '512'
+#  cpu_num: '1'
+#  script:
+#   - yum install -y nano
+
+
+
+
+
